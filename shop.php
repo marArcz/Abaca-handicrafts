@@ -16,14 +16,17 @@ include './classes/ProductItem.php';
     <?php $active_page = "shop" ?>
     <?php include './shared/top_header.php' ?>
 
-    <?php 
-        // get active category
-        $category = isset($_GET['category'])? $_GET['category']:"All Products";
+    <?php
+    // get active category
+    $category = isset($_GET['category']) ? $_GET['category'] : "All Products";
 
     ?>
     <main>
         <section class="py-5">
             <div class="container">
+                <div class="text-center">
+                    <p class="fs-4 mb-4">Our Products</p>
+                </div>
                 <div class="row gy-5">
                     <div class="col-md-3">
                         <ul class="nav flex-column ">
@@ -42,8 +45,8 @@ include './classes/ProductItem.php';
 
                             foreach ($categories as $key => $c) {
                             ?>
-                                <li class="nav-item " >
-                                    <a href="shop.php?category=<?php echo $c ?>" class="nav-link <?php echo $category == $c ? 'link-orange':'link-dark' ?>"><?php echo $c ?></a>
+                                <li class="nav-item ">
+                                    <a href="shop.php?category=<?php echo $c ?>" class="nav-link <?php echo $category == $c ? 'link-orange' : 'link-dark' ?>"><?php echo $c ?></a>
                                 </li>
                             <?php
                             }

@@ -1,6 +1,6 @@
-<header class="navbar scrolling navbar-light bg-light navbar-expand-lg main-navbar fixed-top">
+<header class="navbar navbar-light bg-light navbar-expand-lg main-navbar fixed-top animate__animated animate__slideInDown">
     <div class="container py-3">
-        <div class="row align-items-center w-100">
+        <div class="row align-items-start w-100">
             <div class="col">
                 <!-- <p class="my-1 align-items-center d-none d-lg-flex  ">
                     <i class="material-symbols-outlined filled me-1 text-orange">
@@ -29,7 +29,7 @@
                     foreach ($nav_links as $key => $nav_link) {
                     ?>
                         <li class="nav-item <?php echo $active_page == $nav_link->key ? 'active':'' ?>">
-                            <a href="<?php echo $nav_link->url ?>" class="nav-link link-secondary text-uppercase fw-bold"><?php echo $nav_link->text ?></a>
+                            <a href="<?php echo $nav_link->url ?>" class="nav-link link-dark text-uppercase fw-bold"><?php echo $nav_link->text ?></a>
                         </li>
                     <?php
                     }

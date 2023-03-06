@@ -10,8 +10,8 @@ include_once './classes/ProductItem.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abaca Handicraft</title>
-    <?php include './shared/head.php' ?>
-
+    <?php include './shared/head.php' ?>    
+  
 </head>
 
 <body class="bg-light">
@@ -20,7 +20,7 @@ include_once './classes/ProductItem.php';
 
     <main>
         <section class="hero-main">
-            <div id="hero-carousel" class="carousel slide"   data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-duration="800" data-aos="fade-up" data-bs-ride="carousel">
+            <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
                 <?php
                 $carouselItems = [
                     new CarouselItem(title: "Abaca Dress", image: "assets/images/front-slider/dress.png"),
@@ -50,11 +50,11 @@ include_once './classes/ProductItem.php';
                     <?php
                     foreach ($carouselItems as $key => $carouselItem) {
                     ?>
-                        <div class="carousel-item <?php echo $key == 0 ? 'active' : '' ?>">
+                        <div class="carousel-item <?php echo $key == 0 ? 'active' : '' ?>" style="background-image: url(<?php echo $carouselItem->image ?>)">
                             <div class="container h-100">
                                 <div class="row h-100 gx-0 align-items-center">
-                                    <div class="col-md-6 ">
-                                        <div class="">
+                                    <div class="col-md-6 col-6">
+                                        <div class=" py-4">
                                             <h2><?php echo $carouselItem->title ?></h2>
                                             <div class="line mt-3 mb-4"></div>
                                             <p><?php echo $carouselItem->description ?></p>
@@ -62,9 +62,9 @@ include_once './classes/ProductItem.php';
                                             <a href="<?php echo $carouselItem->url ?>" class="btn btn-orange rounded-0 text-light mt-3">Browse</a>
                                         </div>
                                     </div>
-                                    <div class="col-md text-end h-100">
+                                    <!-- <div class="col-md">
                                         <img src="<?php echo $carouselItem->image ?>" class="img-fluid" alt="<?php echo $carouselItem->title ?>">
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@ include_once './classes/ProductItem.php';
         </section>
         <section>
             <div class="container py-5">
-                <div class="text-center" data-aos-duration="800" data-aos="fade-up">
+                <div class="text-center">
                     <p class=" text-uppercase">Hey There</p>
                     <p class=" fs-4  text-orange">Thank you for supporting local products!</p>
                     <p class=" mb-5 col-md-4 mx-auto text-uppercase text-secondary">This Shop proudly features products from the island of catanduanes</p>
@@ -88,7 +88,7 @@ include_once './classes/ProductItem.php';
         </section>
         <section>
             <div class="container py-5">
-                <div class="text-center mb-3" data-aos-duration="500" data-aos="zoom-in">
+                <div class="text-center mb-3">
                     <h5>FEATURED PRODUCTS</h5>
                 </div>
                 <br>
@@ -109,7 +109,7 @@ include_once './classes/ProductItem.php';
 
                         foreach ($featured_products as $key => $product) {
                         ?>
-                            <div class="col-md-3 "  data-aos-duration="800" data-aos="<?php echo ($key+1) % 4 == 0? 'flip-left':'flip-right'?>">
+                            <div class="col-md-3 ">
                                 <div class="product-card" id="featured-product-card-<?php echo $key ?>">
                                     <div class="inner">
                                         <div class="image-container">
@@ -143,8 +143,8 @@ include_once './classes/ProductItem.php';
                     <div class="row align-items-end gy-3">
                         <div class="col-md">
                             <div class="row justify-content-start">
-                                <div class="col-md-9" >
-                                    <img src="./assets/images/pic.jpg" alt=""  data-aos-duration="500" data-aos="zoom-in" class="img-fluid">
+                                <div class="col-md-9">
+                                    <img src="./assets/images/products/331014170_852045132564953_568379067745869145_n.jpg" alt="" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -184,7 +184,7 @@ include_once './classes/ProductItem.php';
                             foreach ($categories as $key => $category) {
                             ?>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link link-<?php echo $key == 0 ? 'orange' : 'dark' ?>"><?php echo $category ?></a>
+                                    <a href="#" class="nav-link link-<?php echo $key == 0?'orange':'dark' ?>"><?php echo $category ?></a>
                                 </li>
                             <?php
                             }
@@ -259,8 +259,7 @@ include_once './classes/ProductItem.php';
                         <div class="col-md">
                             <div class="row justify-content-center">
                                 <div class="col-md-9">
-                                    <img src="./assets/images/pic.jpg" alt="" class="img-fluid">
-
+                                    <img src="./assets/images/products/331014170_852045132564953_568379067745869145_n.jpg" alt="" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -289,6 +288,7 @@ include_once './classes/ProductItem.php';
             let slideWidth = firstSlide.width();
             console.log('slidew: ', slideWidth)
         }
+
     </script>
 </body>
 

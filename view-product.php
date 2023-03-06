@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-4">
-                        <img src="./assets/images/products/bag2.png" class="img-fluid img-thumbnail bg-light" alt="">
+                        <img src="./assets/images/products/bag2.png" class="img-fluid img-thumbnail shadow-sm bg-light" alt="">
                     </div>
                     <div class="col-md">
                         <p></p>

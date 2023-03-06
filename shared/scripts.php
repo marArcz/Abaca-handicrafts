@@ -1,8 +1,10 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     $(function() {
+        AOS.init();
+        
         $("#offcanvas-cart").on('show.bs.offcanvas', function(e) {
             let productCard = $($(e.relatedTarget).data('target'));
             let offcanvas = $(this);
