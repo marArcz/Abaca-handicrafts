@@ -11,9 +11,7 @@ include_once './classes/ProductItem.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php include './shared/head.php' ?>
-    <style>
-
-    </style>
+  
 </head>
 
 <body class="bg-light">
@@ -186,7 +184,7 @@ include_once './classes/ProductItem.php';
                             foreach ($categories as $key => $category) {
                             ?>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link link-orange">All Products</a>
+                                    <a href="#" class="nav-link link-<?php echo $key == 0?'orange':'dark' ?>"><?php echo $category ?></a>
                                 </li>
                             <?php
                             }
