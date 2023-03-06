@@ -20,9 +20,18 @@ $navbar-h: 18vh;
     min-height: $navbar-h;
     height: max-content;
 
+    .navbar-brand {
+        padding: 0 !important;
+        img {
+            width: 280px;
+            transition: 200ms !important;
+        }
+    }
+
     &.scrolling {
         .navbar-brand {
             img {
+                transition: 200ms !important;
                 width: 220px;
             }
         }
@@ -42,8 +51,11 @@ $navbar-h: 18vh;
 }
 
 main {
-    margin-top: $navbar-h  !important;
-
+    margin-top: $navbar-h !important;
+    section{
+        margin-top: 30px !important;
+        margin-bottom: 20px !important;
+    }
 }
 
 
@@ -117,10 +129,11 @@ main {
     .carousel-item {
         width: 100%;
         height: 75vh;
+
         // background-size:80%;
         // background-position: right;
         // background-repeat: no-repeat;
-        img{
+        img {
             // width: 100%;
             // height: 100%;
             max-height: 100% !important;

@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <form action="" id="add-to-cart-form">
                 <div class="row justify-content-center mb-3">
-                    <div class="col-md">
+                    <div class="col-md text-center">
                         <img data-placeholder="assets\images\products\placeholder.jpg" src="assets\images\products\placeholder.jpg" class=" img-fluid img-thumbnail product-image" alt="">
                     </div>
                 </div>

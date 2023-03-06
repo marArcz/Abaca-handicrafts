@@ -20,7 +20,7 @@ include_once './classes/ProductItem.php';
 
     <main>
         <section class="hero-main">
-            <div id="hero-carousel" class="carousel slide"   data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-duration="800" data-aos="fade-up" data-bs-ride="carousel">
+            <div id="hero-carousel" data-bs-interval="2000" class="carousel slide "   data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-duration="800" data-aos="fade-up" data-bs-ride="carousel">
                 <?php
                 $carouselItems = [
                     new CarouselItem(title: "Abaca Dress", image: "assets/images/front-slider/dress.png"),
@@ -148,7 +148,7 @@ include_once './classes/ProductItem.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md ">
+                        <div class="col-md "  data-aos-duration="500" data-aos="fade-up">
                             <p class="mt-1 mb-4">About</p>
                             <h1 class="mb-3">Abaca Handicraft</h1>
                             <p>This shop sells Abaca products from Catanduanes.</p>
@@ -167,7 +167,7 @@ include_once './classes/ProductItem.php';
             <div class="container">
                 <div class="row gy-5">
                     <div class="col-md-3">
-                        <ul class="nav flex-column ">
+                        <ul class="nav flex-column "  data-aos-duration="300" data-aos="zoom-in">
                             <?php
                             $categories = [
                                 "All Products",
@@ -215,7 +215,7 @@ include_once './classes/ProductItem.php';
 
                                 foreach ($products as $key => $product) {
                                 ?>
-                                    <div class="col-md-3 ">
+                                    <div class="col-md-3 "  data-aos-duration="500" data-aos-delay="500" data-aos="zoom-in">
                                         <div class="product-card" id="product-card-<?php echo $key ?>">
                                             <div class="inner">
                                                 <div class="image-container">
@@ -248,7 +248,7 @@ include_once './classes/ProductItem.php';
             <div class="container">
                 <hr>
                 <div class="py-4">
-                    <div class="row align-items-center gy-3">
+                    <div class="row align-items-center gy-3" data-aos="fade-up">
                         <div class="col-md ">
                             <h1 class="mb-5">Keep in Touch</h1>
                             <p class="mt-3">

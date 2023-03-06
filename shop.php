@@ -22,14 +22,15 @@ include './classes/ProductItem.php';
 
     ?>
     <main>
-        <section class="py-5">
+        <br>
+        <section class="">
             <div class="container">
                 <div class="text-center">
-                    <p class="fs-4 mb-4">Our Products</p>
+                    <p class="fs-4 mb-4" data-aos="zoom-in">Our Products</p>
                 </div>
                 <div class="row gy-5">
-                    <div class="col-md-3">
-                        <ul class="nav flex-column ">
+                    <div class="col-md-2">
+                        <ul class="nav flex-column "  data-aos="fade-up" data-aos-duration="800">
                             <?php
                             $categories = [
                                 "All Products",
@@ -45,7 +46,7 @@ include './classes/ProductItem.php';
 
                             foreach ($categories as $key => $c) {
                             ?>
-                                <li class="nav-item ">
+                                <li class="nav-item">
                                     <a href="shop.php?category=<?php echo $c ?>" class="nav-link <?php echo $category == $c ? 'link-orange' : 'link-dark' ?>"><?php echo $c ?></a>
                                 </li>
                             <?php
@@ -85,7 +86,7 @@ include './classes/ProductItem.php';
                             <?php
                             foreach ($products as $key => $product) {
                             ?>
-                                <div class="col-md-3 ">
+                                <div class="col-md-3 "  data-aos="fade-up" data-aos-duration="800">
                                     <div class="product-card" id="featured-product-card-<?php echo $key ?>">
                                         <div class="inner">
                                             <div class="image-container">

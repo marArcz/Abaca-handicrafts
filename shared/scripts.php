@@ -4,7 +4,7 @@
 <script>
     $(function() {
         AOS.init();
-        
+
         $("#offcanvas-cart").on('show.bs.offcanvas', function(e) {
             let productCard = $($(e.relatedTarget).data('target'));
             let offcanvas = $(this);
@@ -27,5 +27,25 @@
             offcanvas.find(".product-price").html("")
             offcanvas.find(".product-image").attr('src', offcanvas.find(".product-image").data("placeholder"))
         })
+
+        let scrollTop = $(window).scrollTop()
+        console.log('scrolltop: ', scrollTop)
+
+        if (scrollTop > 20) {
+            $(".main-navbar").addClass("scrolling")
+        } else {
+            $(".main-navbar").removeClass("scrolling")
+        }
+    })
+
+    $(window).on('scroll', function(e) {
+        let scrollTop = $(window).scrollTop()
+        console.log('scrolltop: ', scrollTop)
+
+        if (scrollTop > 20) {
+            $(".main-navbar").addClass("scrolling")
+        } else {
+            $(".main-navbar").removeClass("scrolling")
+        }
     })
 </script>
