@@ -1,18 +1,18 @@
 <header class="navbar scrolling navbar-light bg-light navbar-expand-lg main-navbar fixed-top">
     <div class="container py-3">
         <div class="row align-items-center w-100">
-            <div class="col-md">
+            <div class="col">
                 <!-- <p class="my-1 align-items-center d-none d-lg-flex  ">
                     <i class="material-symbols-outlined filled me-1 text-orange">
                         mail
                     </i>
                     <span class="">abacahandicraft@gmail.com</span>
                 </p> -->
-                <a href="" class=" link-orange text-decoration-none">
+                <a href="#" class="menu-btn link-orange text-decoration-none">
                     <span class="material-icon fs-3">menu</span>
                 </a>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-6 text-center">
                 <a href="index.php" class="navbar-brand text-center mx-auto">
                     <img src="./assets/images/navbar_logo.png" class="img-fluid mx-auto" alt="">
                 </a>
@@ -38,8 +38,8 @@
                   
                 </ul>
             </div>
-            <div class="col-md">
-                <ul class="nav justify-content-end align-items-center flex-row d-none d-lg-flex">
+            <div class="col">
+                <ul class="nav justify-content-end align-items-center flex-row ">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="material-symbols-outlined filled fs-4 fw-bold me-1 text-orange">
@@ -47,7 +47,7 @@
                             </i>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-lg-flex d-none">
                         <a href="#" class="nav-link">
                             <i class="material-symbols-outlined filled fs-4 me-1 fw-bold text-orange">
                                 shopping_cart

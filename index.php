@@ -9,8 +9,8 @@ include_once './classes/ProductItem.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <?php include './shared/head.php' ?>
+    <title>Abaca Handicraft</title>
+    <?php include './shared/head.php' ?>    
   
 </head>
 
@@ -53,7 +53,7 @@ include_once './classes/ProductItem.php';
                         <div class="carousel-item <?php echo $key == 0 ? 'active' : '' ?>" style="background-image: url(<?php echo $carouselItem->image ?>)">
                             <div class="container h-100">
                                 <div class="row h-100 gx-0 align-items-center">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 col-6">
                                         <div class=" py-4">
                                             <h2><?php echo $carouselItem->title ?></h2>
                                             <div class="line mt-3 mb-4"></div>
@@ -99,7 +99,7 @@ include_once './classes/ProductItem.php';
                         $featured_products = [
                             new ProductItem("Abaca Bag", "₱120", "assets/images/products/bag3.png"),
                             new ProductItem("Abaca Dress", "₱120", "assets/images/products/dress.png"),
-                            new ProductItem("Abaca Souvenir Rabbit", "₱120", "assets/images/products/rabbits.png"),
+                            new ProductItem("Abaca Souvenir Rabbit", "₱120", "assets/images/products/rabbit.png"),
                             new ProductItem("Abaca Pen Holder", "₱120", "assets/images/products/garapon brown close.png"),
                             new ProductItem("Abaca Chandelier", "₱120", "assets/images/products/Chandelier1.png"),
                             new ProductItem("Abaca Chandelier", "₱120", "assets/images/products/Chandelier2.png"),
