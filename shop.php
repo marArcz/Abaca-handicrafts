@@ -12,7 +12,7 @@ include './classes/ProductItem.php';
     <?php include './shared/head.php' ?>
 </head>
 
-<body>
+<body class="">
     <?php $active_page = "shop" ?>
     <?php include './shared/top_header.php' ?>
 
@@ -117,6 +117,7 @@ include './classes/ProductItem.php';
         </section>
     </main>
 
+    <?php include './shared/offcanvas-menu.php' ?>
     <?php include './shared/offcanvas-cart.php' ?>
     <?php include './shared/scripts.php' ?>
 </body>

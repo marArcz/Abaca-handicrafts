@@ -20,13 +20,13 @@ include_once './classes/ProductItem.php';
 
     <main>
         <section class="hero-main">
-            <div id="hero-carousel" data-bs-interval="2000" class="carousel slide "   data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-duration="800" data-aos="fade-up" data-bs-ride="carousel">
+            <div id="hero-carousel" data-bs-interval="3000" class="carousel slide "   data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-duration="800" data-aos="fade-up" data-bs-ride="carousel">
                 <?php
                 $carouselItems = [
                     new CarouselItem(title: "Abaca Dress", image: "assets/images/front-slider/dress.png"),
                     new CarouselItem(title: "Abaca Bags", image: "assets/images/front-slider/bag.png"),
                     new CarouselItem(title: "Abaca Baskets", image: "assets/images/front-slider/basket.png"),
-                    new CarouselItem(title: "Abaca Pots", image: "assets/images/front-slider/flower.png"),
+                    new CarouselItem(title: "Abaca Base", image: "assets/images/front-slider/flower.png"),
                     new CarouselItem(title: "Abaca Jars", image: "assets/images/front-slider/garapon.png"),
                     new CarouselItem(title: "Abaca Slippers", image: "assets/images/front-slider/slipers.png"),
                     new CarouselItem(title: "Abaca Souvenirs", image: "assets/images/front-slider/souviner.png"),
@@ -53,17 +53,17 @@ include_once './classes/ProductItem.php';
                         <div class="carousel-item <?php echo $key == 0 ? 'active' : '' ?>">
                             <div class="container h-100">
                                 <div class="row h-100 gx-0 align-items-center">
-                                    <div class="col-md-6 ">
+                                    <div class="col-md-6">
                                         <div class="">
-                                            <h2><?php echo $carouselItem->title ?></h2>
+                                            <h2 class="text-white"><?php echo $carouselItem->title ?></h2>
                                             <div class="line mt-3 mb-4"></div>
-                                            <p><?php echo $carouselItem->description ?></p>
+                                            <p class="text-light"><?php echo $carouselItem->description ?></p>
 
                                             <a href="<?php echo $carouselItem->url ?>" class="btn btn-orange rounded-0 text-light mt-3">Browse</a>
                                         </div>
                                     </div>
                                     <div class="col-md text-end h-100">
-                                        <img src="<?php echo $carouselItem->image ?>" class="img-fluid" alt="<?php echo $carouselItem->title ?>">
+                                        <img src="<?php echo $carouselItem->image ?>" class="img-fluid h-100" alt="<?php echo $carouselItem->title ?>">
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@ include_once './classes/ProductItem.php';
         <section>
             <div class="container py-5">
                 <div class="text-center" data-aos-duration="800" data-aos="fade-up">
-                    <p class=" text-uppercase">Hey There</p>
+                    <p class=" text-uppercase fw-bold">Hey There</p>
                     <p class=" fs-4  text-orange">Thank you for supporting local products!</p>
                     <p class=" mb-5 col-md-4 mx-auto text-uppercase text-secondary">This Shop proudly features products from the island of catanduanes</p>
 
@@ -89,7 +89,7 @@ include_once './classes/ProductItem.php';
         <section>
             <div class="container py-5">
                 <div class="text-center mb-3" data-aos-duration="500" data-aos="zoom-in">
-                    <h5>FEATURED PRODUCTS</h5>
+                    <h5 class=" fw-bold">FEATURED PRODUCTS</h5>
                 </div>
                 <br>
                 <div class="products-container">
@@ -118,7 +118,7 @@ include_once './classes/ProductItem.php';
                                         <div class="w-100 controls ">
                                             <div class="d-flex bg-dark px-3 py-1">
                                                 <a href="#offcanvas-cart" data-target="#featured-product-card-<?php echo $key ?>" data-bs-toggle="offcanvas" class="my-1 link-light text-decoration-none d-flex align-items-center"><span class="material-symbols-outlined fs-6 me-1">shopping_cart</span> Add to cart</a>
-                                                <a href="#view-product-modal" data-bs-toggle="modal" class="my-1 link-light text-decoration-none ms-auto"><span class="material-symbols-outlined fs-6 me-1">fullscreen</span></a>
+                                                <a href="view-product.php" class="my-1 link-light text-decoration-none ms-auto"><span class="material-symbols-outlined fs-6 me-1">fullscreen</span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -131,33 +131,6 @@ include_once './classes/ProductItem.php';
                         <?php
                         }
                         ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <br><br>
-        <section id="about">
-            <div class="container">
-                <hr>
-                <div class="py-4">
-                    <div class="row align-items-end gy-3">
-                        <div class="col-md">
-                            <div class="row justify-content-start">
-                                <div class="col-md-9" >
-                                    <img src="./assets/images/pic.jpg" alt=""  data-aos-duration="500" data-aos="zoom-in" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md "  data-aos-duration="500" data-aos="fade-up">
-                            <p class="mt-1 mb-4">About</p>
-                            <h1 class="mb-3">Abaca Handicraft</h1>
-                            <p>This shop sells Abaca products from Catanduanes.</p>
-                            <p class="">
-                                A place to find your Ideal Craft, we are not selling but making masterpiece.
-                            </p>
-                            <p>You need, we Made.</p>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -215,7 +188,7 @@ include_once './classes/ProductItem.php';
 
                                 foreach ($products as $key => $product) {
                                 ?>
-                                    <div class="col-md-3 "  data-aos-duration="500" data-aos-delay="500" data-aos="zoom-in">
+                                    <div class="col-md-3 " data-aos-once="true" data-aos-duration="500" data-aos-delay="500" data-aos="zoom-in">
                                         <div class="product-card" id="product-card-<?php echo $key ?>">
                                             <div class="inner">
                                                 <div class="image-container">
@@ -238,45 +211,21 @@ include_once './classes/ProductItem.php';
                                 }
                                 ?>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <br>
-        <section id="contact">
-            <div class="container">
-                <hr>
-                <div class="py-4">
-                    <div class="row align-items-center gy-3" data-aos="fade-up">
-                        <div class="col-md ">
-                            <h1 class="mb-5">Keep in Touch</h1>
-                            <p class="mt-3">
-                                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiuiana Smod Tempor Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip.
-                            </p>
-                            <a href="#" class="btn btn-secondary rounded-0">Send Message</a>
-                        </div>
-                        <div class="col-md">
-                            <div class="row justify-content-center">
-                                <div class="col-md-9">
-                                    <img src="./assets/images/pic.jpg" alt="" class="img-fluid">
-
-                                </div>
+                            <div class="mt-3">
+                                <a class="btn btn-light" href="shop.php">More</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="footer bg-orange bg-opacity-50">
-            <div class="container py-3 text-center">
-                <p class="my-1">2023 Abaca handicrafts All rights reserved</p>
-                <p class="mb-1 mt-2">Products Made out of Abaca</p>
-                <p class="mt-2 mb-1">From Catanduanes</p>
-            </div>
-        </footer>
+        <br>
+    
     </main>
 
+    <?php include './shared/footer.php' ?>
+
+    <?php include './shared/offcanvas-menu.php' ?>
     <?php include './shared/offcanvas-cart.php' ?>
     <?php include './shared/scripts.php' ?>
     <script>
