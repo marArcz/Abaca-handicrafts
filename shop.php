@@ -26,11 +26,11 @@ include './classes/ProductItem.php';
         <section class="">
             <div class="container">
                 <div class="text-center">
-                    <p class="fs-4 mb-4" data-aos="zoom-in">Our Products</p>
+                    <p class="fs-4 fw-bold text-dark-brown mb-4" data-aos="zoom-in">Our Products</p>
                 </div>
                 <div class="row gy-5">
                     <div class="col-md-2">
-                        <ul class="nav flex-column "  data-aos="fade-up" data-aos-duration="800">
+                        <ul class="nav flex-column " data-aos="fade-up" data-aos-duration="800">
                             <?php
                             $categories = [
                                 "All Products",
@@ -86,16 +86,15 @@ include './classes/ProductItem.php';
                             <?php
                             foreach ($products as $key => $product) {
                             ?>
-                                <div class="col-md-3 "  data-aos="fade-up" data-aos-duration="800">
+                                <div class="col-md-3 " data-aos="fade-up" data-aos-duration="800">
                                     <div class="product-card" id="featured-product-card-<?php echo $key ?>">
                                         <div class="inner">
                                             <div class="image-container">
                                                 <img src="<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
                                             </div>
                                             <div class="w-100 controls ">
-                                                <div class="d-flex bg-dark px-3 py-1">
-                                                    <a href="#offcanvas-cart" data-target="#featured-product-card-<?php echo $key ?>" data-bs-toggle="offcanvas" class="my-1 link-light text-decoration-none d-flex align-items-center"><span class="material-symbols-outlined fs-6 me-1">shopping_cart</span> Add to cart</a>
-                                                    <a href="view-product.php" class="my-1 link-light text-decoration-none ms-auto"><span class="material-symbols-outlined fs-6 me-1">fullscreen</span></a>
+                                                <div class="text-center px-3 py-3 bg-light bg-opacity-75">
+                                                    <a href="#view-product-modal" data-bs-toggle="modal" class="link-dark">Quick View</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -119,6 +118,7 @@ include './classes/ProductItem.php';
 
     <?php include './shared/offcanvas-menu.php' ?>
     <?php include './shared/offcanvas-cart.php' ?>
+    <?php include './shared/modals/view-product-modal.php' ?>
     <?php include './shared/scripts.php' ?>
 </body>
 

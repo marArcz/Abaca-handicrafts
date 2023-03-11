@@ -1,5 +1,5 @@
-<header class="navbar navbar-light navbar-expand-lg main-navbar fixed-top animate__animated animate__slideInDown">
-    <div class="px-lg-5 px-3 d-flex w-100 align-items-center">
+<header class="navbar navbar-light bg-light navbar-expand-lg main-navbar fixed-top animate__animated animate__slideInDown">
+    <div class="px-lg-5 px-3 d-flex w-100 align-items-center py-lg-3 py-1">
         <div class="row align-items-center w-100">
             <div class="col">
                 <a href="#offcanvas-menu" data-bs-toggle="offcanvas" class="menu-btn link-orange text-decoration-none p-0 ">
@@ -7,17 +7,14 @@
                         <div></div>
                         <div></div>
                         <div></div>
-                        <div></div>
                     </div>
                 </a>
-
             </div>
             <div class="col-6 text-center">
-
                 <a href="index.php" class="navbar-brand text-center mx-auto">
                     <img src="./assets/images/navbar_logo.png" class="img-fluid mx-auto" alt="">
                 </a>
-                <!-- <ul class="nav custom-nav flex-row justify-content-center d-none d-lg-flex">
+                <!-- <ul class="nav custom-nav flex-row mt-2 justify-content-center d-none d-lg-flex">
                     <?php
                     include_once './classes/NavLink.php';
                     $nav_links = [

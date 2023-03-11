@@ -44,8 +44,11 @@
 
         if (scrollTop > 20) {
             $(".main-navbar").addClass("scrolling")
+            // $(".main-navbar").find(".navbar-brand img").attr("src","./assets/images/navbar_logo.png")
         } else {
             $(".main-navbar").removeClass("scrolling")
+            // $(".main-navbar").find(".navbar-brand img").attr("src","./assets/images/navbar_logo_white.png")
+
         }
     })
 </script>

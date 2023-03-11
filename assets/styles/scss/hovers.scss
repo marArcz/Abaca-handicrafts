@@ -1,0 +1,29 @@
+$hovers:(
+    "btn-elegant":(
+        'border-radius':8px 0 8px 0,
+        'transform':scale(1.1)
+    )
+);
+
+@each $className, $style in $hovers{
+    .hover-#{$className}{
+        transition: 300ms !important;
+        &:hover{
+            @each $attr, $value in $style{
+                #{$attr}:$value !important;
+            }
+        }
+    }
+
+    .#{$className}{
+        &{
+            @each $attr, $value in $style{
+                #{$attr}:$value !important;
+            }
+
+            &:hover{
+                transform: scale(1.15) !important;
+            }
+        }
+    }
+}

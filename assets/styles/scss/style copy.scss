@@ -1,5 +1,4 @@
 @import './colors';
-@import url("./hovers.css");
 $navbar-h: 10vh;
 
 .material-symbols-outlined.filled {
@@ -9,40 +8,19 @@ $navbar-h: 10vh;
         'opsz' 48 !important
 }
 
-body {
-
-    /* width */
-    &::-webkit-scrollbar {
-        width: 5px;
-        background: $orange
-    }
-
-    /* Track */
-    &::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px rgb(156, 156, 156);
-        border-radius: 10px;
-    }
-
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-        background: white;
-        border-radius: 10px;
-    }
-}
-
 * {
-    font-family: 'Cantarell', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .f-raleway {
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'Cantarell', sans-serif !important;
 }
 
 .main-navbar {
-    min-height: $navbar-h;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    background: white;
+    height: $navbar-h;
+    padding: 20px 0 !important;
+    box-sizing: border-box;
+    background: transparent;
     transition: 300ms;
     // height: max-content;
 
@@ -50,7 +28,7 @@ body {
         padding: 0 !important;
 
         img {
-            width: 200px;
+            width: 180px;
             transition: 200ms !important;
         }
     }
@@ -61,7 +39,7 @@ body {
         .navbar-brand {
             img {
                 transition: 200ms !important;
-                width: 170px;
+                width: 220px;
             }
         }
 
@@ -70,7 +48,7 @@ body {
         .menu-btn {
             .icon {
                 div {
-                    // background: black !important;
+                    background: black !important;
                 }
             }
         }
@@ -86,63 +64,70 @@ body {
 
 
     .menu-btn {
-        $size: 10px;
-        $gap: 7px;
+        $width: 50px;
+        $height: 2px;
+        $gap: 10px;
 
         &:hover {
             .icon {
                 div {
-                    &:nth-child(1) {}
+                    &:nth-child(1) {
+                        width: $width - 10px !important;
 
-                    &:nth-child(2) {}
+                    }
 
-                    &:nth-child(3) {}
+                    &:nth-child(2) {
+                        width: $width !important;
+                    }
+
+                    &:nth-child(3) {
+                        width: $width - 10px !important;
+
+                    }
                 }
             }
         }
 
         .icon {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: 2;
-            column-gap: $gap;
+
+            border-radius: 20px;
             text-align: left !important;
             width: max-content !important;
-            &:hover{
-                transform: rotate(360deg) !important;
-            }
+
             div {
                 transition: 150ms linear;
-                width: $size !important;
-                height: $size !important;
-                background: rgba($orange, 0.8);
-                border-radius: 50% !important;
-                box-sizing: border-box;
-
+                width: $width !important;
+                height: $height !important;
+                background: rgb(255, 255, 255);
                 // margin: 0 auto;
 
                 &:nth-child(1) {}
 
-                &:nth-child(2) {}
+                &:nth-child(2) {
+                    width: $width - 20px !important;
+                    margin-top: $gap;
+                }
 
                 &:nth-child(3) {
                     margin-top: $gap;
                 }
 
-                &:nth-child(4) {
-                    margin-top: $gap;
-                }
+
             }
         }
     }
 }
 
+#offcanvas-menu {
+    background-color: #d59964;
+}
 
 main {
-    margin-top: $navbar-h !important;
+    // margin-top: $navbar-h !important;
 
     section {
-        padding-top: 30px !important;
+        // margin-top: 30px !important;
+        // margin-bottom: 20px !important;
         padding-bottom: 20px;
     }
 
@@ -196,15 +181,20 @@ main {
 }
 
 .carousel {
-    $height: 100vh - $navbar-h;
-    background-color: #463C32 !important;
-    // border-radius: 30px 5px 30px 5px !important;
+    $height: 100vh;
+    background-color: #303030 !important;
+
+    // height: max-content !important;
     .carousel-item {
         width: 100%;
         height: $height;
 
+        // background-size:80%;
+        // background-position: right;
+        // background-repeat: no-repeat;
         img {
-
+            // width: 100%;
+            // height: 100%;
             max-height: 100% !important;
         }
     }
@@ -280,7 +270,6 @@ main {
     position: relative;
 
     .inner {
-
         &:hover {
             .controls {
                 // display: block;
@@ -290,7 +279,7 @@ main {
             }
 
             .image-container {
-                background: rgb(255, 255, 255) !important;
+                background: rgb(236, 236, 236) !important;
 
                 &::before {
                     left: -50% !important;
@@ -369,7 +358,7 @@ main {
             opacity: 0.2;
             z-index: 3;
 
-            transition: 300ms linear;
+            transition: 300ms;
         }
 
         &::after {
@@ -381,7 +370,7 @@ main {
             right: 0 !important;
             background: rgb(200, 200, 200);
             opacity: 0.2;
-            transition: 300ms linear;
+            transition: 300ms;
         }
 
         img {
@@ -432,9 +421,6 @@ main {
             a {
                 font-size: 0.8rem !important;
             }
-            div{
-                // background: rgba(196, 196, 196,0.3);
-            }
         }
 
 
@@ -474,25 +460,21 @@ main {
 }
 
 #offcanvas-menu {
-    height: 100vh !important;
-    .offcanvas-body{
-        height: 100% !important;
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
     .nav {
         li {
             &.active {
                 & {
                     position: relative;
-                    opacity: 0.85;
+                    opacity: 0.7;
 
-                }
-                a{
-                    .icon{
-                        border-bottom: 3px solid $dark-brown !important;
+                    &::before {
+                        content: ' ';
+                        position: absolute;
+                        width: 3px;
+                        height: 100%;
+                        background: white;
+                        bottom: 0;
+                        left: 0;
                     }
                 }
             }
@@ -501,34 +483,8 @@ main {
                 transition: 200ms;
 
                 &:hover {
-                    opacity: 0.9;
-                    transform: scale(1.05);
-                    .icon{
-                        border: 2px solid $dark-brown !important;
-                        box-shadow: 0px 1px 5px rgb(189, 189, 189);
-                    }
-                }
-
-                .icon{
-                    $size:50px;
-                    transition: 300ms !important;
-                    background: white;
-                    width: $size !important;
-                    height: $size !important;
-                    box-sizing: border-box;
-                    box-shadow: 0px 1px 5px rgb(211, 211, 211);
-                    border-radius: 35%;
-                    text-align: center;
-                    border: 2px solid white !important;
-                    background: rgb(250, 250, 250);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 10px;
-                    .material-icon{
-                        font-size: 1.3rem;
-                        // color: $orange !important;
-                    }
+                    opacity: 0.7;
+                    transform: scale(1.01);
                 }
             }
 

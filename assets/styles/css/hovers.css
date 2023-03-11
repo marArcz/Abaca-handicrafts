@@ -1,0 +1,15 @@
+.hover-btn-elegant {
+  transition: 300ms !important;
+}
+.hover-btn-elegant:hover {
+  border-radius: 8px 0 8px 0 !important;
+  transform: scale(1.1) !important;
+}
+
+.btn-elegant {
+  border-radius: 8px 0 8px 0 !important;
+  transform: scale(1.1) !important;
+}
+.btn-elegant:hover {
+  transform: scale(1.15) !important;
+}/*# sourceMappingURL=hovers.css.map */
