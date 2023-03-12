@@ -19,11 +19,11 @@ include_once './classes/ProductItem.php';
     <?php include './shared/top_header.php' ?>
 
     <main>
-        <section>
+        <section class="pt-4">
             <div class="container ">
-                <div class="text-center">
-                    <p class="fs-3 my-1 fw-bold">Proudly Made Abaca Handicrafts</p>
-                    <p class="fs-6 my-1 text-secondary">Products made from natural resources</p>
+                <div class="text-center ">
+                    <p class="fs-3 mt-1 mb-2 fw-bold">Proudly Made Abaca Handicrafts</p>
+                    <p class="fs-6 my-1 text-secondary">Made from natural resources</p>
                 </div>
             </div>
         </section>
@@ -131,7 +131,7 @@ include_once './classes/ProductItem.php';
                                                 <a href="view-product.php" class="my-1 link-light text-decoration-none ms-auto"><span class="material-symbols-outlined fs-6 me-1">fullscreen</span></a>
                                             </div> -->
                                             <div class="text-center px-3 py-1 bg-light bg-opacity-75">
-                                                <a href="#" class="link-dark">Quick View</a>
+                                                <a href="#view-product-modal" data-bs-toggle="modal" class="link-dark">Quick View</a>
                                             </div>
                                         </div>
                                     </div>
@@ -201,7 +201,7 @@ include_once './classes/ProductItem.php';
 
                                 foreach ($products as $key => $product) {
                                 ?>
-                                    <div class="col-md-3 " data-aos-once="true" data-aos-duration="500" data-aos-delay="500" data-aos="zoom-in">
+                                    <div class="col-md-4 col-lg-3" data-aos-once="true" data-aos-duration="500" data-aos="zoom-in">
                                         <div class="product-card" id="product-card-<?php echo $key ?>">
                                             <div class="inner">
                                                 <div class="image-container">
@@ -237,9 +237,8 @@ include_once './classes/ProductItem.php';
     </main>
 
     <?php include './shared/footer.php' ?>
-
-    <?php include './shared/offcanvas-menu.php' ?>
     <?php include './shared/offcanvas-cart.php' ?>
+    <?php include './shared/modals/view-product-modal.php' ?>
     <?php include './shared/scripts.php' ?>
     <script>
         function initSlider() {

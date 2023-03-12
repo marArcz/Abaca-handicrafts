@@ -34,7 +34,7 @@ body::-webkit-scrollbar-thumb {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   background: white;
-  transition: 300ms;
+  transition: 300ms !important;
 }
 .main-navbar .navbar-brand {
   padding: 0 !important;
@@ -45,15 +45,18 @@ body::-webkit-scrollbar-thumb {
 }
 .main-navbar.scrolling {
   background: white !important;
-  box-shadow: 0 1px 2px rgb(223, 223, 223);
+  box-shadow: 0 1px 5px rgb(155, 155, 155);
 }
 .main-navbar.scrolling .navbar-brand img {
   transition: 200ms !important;
-  width: 170px;
+  width: 195px;
 }
 .main-navbar .nav a {
   font-size: 0.9rem !important;
   font-weight: 400 !important;
+}
+.main-navbar .menu-btn:hover .icon {
+  transform: rotate(180deg) !important;
 }
 .main-navbar .menu-btn .icon {
   display: grid;
@@ -64,9 +67,7 @@ body::-webkit-scrollbar-thumb {
   text-align: left !important;
   width: -moz-max-content !important;
   width: max-content !important;
-}
-.main-navbar .menu-btn .icon:hover {
-  transform: rotate(360deg) !important;
+  transition: 300ms !important;
 }
 .main-navbar .menu-btn .icon div {
   transition: 150ms linear;
@@ -87,11 +88,7 @@ main {
   margin-top: 10vh !important;
 }
 main section {
-  padding-top: 30px !important;
   padding-bottom: 20px;
-}
-main section:not(.hero-main) {
-  padding-top: 10vh;
 }
 
 .custom-nav li {
@@ -122,12 +119,72 @@ main section:not(.hero-main) {
   transform: scale(1, 1) !important;
 }
 
-.carousel {
+.hero-main .carousel {
   background-color: #463C32 !important;
 }
-.carousel .carousel-item {
+.hero-main .carousel .carousel-item {
   width: 100%;
   height: 90vh;
+}
+.hero-main .carousel .carousel-item img {
+  max-height: 100% !important;
+}
+.hero-main .carousel .price {
+  position: relative;
+  padding-left: 35px;
+}
+.hero-main .carousel .price::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 1px;
+  background: #F2994A;
+}
+.hero-main .carousel .line {
+  width: 100%;
+  height: 1px;
+  background: #F2994A;
+}
+.hero-main .carousel .carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0 !important;
+  right: 0 !important;
+  margin: auto;
+  width: -moz-max-content;
+  width: max-content;
+}
+.hero-main .carousel .carousel-indicators button {
+  width: -moz-max-content !important;
+  width: max-content !important;
+  height: -moz-max-content !important;
+  height: max-content !important;
+  cursor: pointer !important;
+  padding: 2px;
+  border: 1px solid #F2994A;
+  border-radius: 50%;
+  margin: 0 10px;
+  background: transparent !important;
+}
+.hero-main .carousel .carousel-indicators button .circle {
+  display: block;
+  width: 5px !important;
+  height: 5px !important;
+  background: #F2994A !important;
+  border-radius: 50%;
+  visibility: hidden !important;
+  transition: 100ms;
+}
+.hero-main .carousel .carousel-indicators button.active .circle {
+  visibility: visible !important;
+}
+
+.carousel .carousel-item {
+  width: 100%;
 }
 .carousel .carousel-item img {
   max-height: 100% !important;
@@ -168,16 +225,19 @@ main section:not(.hero-main) {
   height: max-content !important;
   cursor: pointer !important;
   padding: 2px;
-  border: 1px solid #F2994A;
+  border: 1px solid #463C32;
+  box-sizing: border-box;
   border-radius: 50%;
   margin: 0 10px;
   background: transparent !important;
+  text-align: center;
 }
 .carousel .carousel-indicators button .circle {
+  margin: auto !important;
   display: block;
   width: 5px !important;
   height: 5px !important;
-  background: #F2994A !important;
+  background: #463C32 !important;
   border-radius: 50%;
   visibility: hidden !important;
   transition: 100ms;
@@ -339,4 +399,48 @@ main section:not(.hero-main) {
 }
 #offcanvas-menu .nav li a .icon .material-icon {
   font-size: 1.3rem;
+}
+
+.custom-input {
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(70, 60, 50, 0.7) !important;
+  outline: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 5px 10px;
+  background: transparent !important;
+}
+
+.vh-100 {
+  height: 100vh !important;
+}
+
+.category-header {
+  height: 60vh;
+}
+.category-header .line {
+  background: #F2994A !important;
+  height: 1px;
+}
+
+.custom-page-loader {
+  width: 0%;
+  height: 4px;
+  background: #F2994A;
+  position: fixed;
+  z-index: 1040 !important;
+  top: 0;
+  left: 0;
+  transition: 400ms ease-out !important;
+}
+
+#offcanvas-cart {
+  height: 100vh !important;
+  width: 100% !important;
+}
+
+.notiflix-loading *,
+.notiflix-loading p {
+  font-family: "Carattere" !important;
 }/*# sourceMappingURL=style.css.map */
