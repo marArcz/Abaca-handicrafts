@@ -23,7 +23,7 @@ include_once './classes/ProductItem.php';
             <div class="container ">
                 <div class="text-center ">
                     <p class="fs-3 mt-1 mb-2 fw-bold">Proudly Made Abaca Handicrafts</p>
-                    <p class="fs-6 my-1 text-secondary">Made from natural resources</p>
+                    <p class="fs-6 fw-light my-1 text-secondary">Made from natural resources</p>
                 </div>
             </div>
         </section>
