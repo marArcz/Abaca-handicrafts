@@ -12,7 +12,7 @@
 <body class="bg-light">
     <?php include './shared/top_header.php' ?>
     <main>
-        <section>
+        <section class="pt-xl-4 pt-4 ">
             <div class="text-center bg-dark-brown py-3 text-light">
                 <h5 class="">About Us</h5>
             </div>

@@ -1,6 +1,6 @@
 @import './colors';
 @import url("./hovers.css");
-$navbar-h: 10vh;
+$navbar-h: 13vh;
 
 .material-symbols-outlined.filled {
     font-variation-settings: 'FILL' 1,
@@ -10,6 +10,7 @@ $navbar-h: 10vh;
 }
 
 body {
+    overflow-x: hidden !important;
 
     /* width */
     &::-webkit-scrollbar {
@@ -40,7 +41,8 @@ body {
 
 .main-navbar {
     // border-top: 5px solid $orange;
-    min-height: $navbar-h;
+    height: $navbar-h;
+    box-sizing: border-box;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     background: white;
@@ -94,6 +96,7 @@ body {
         &:hover {
             .icon {
                 transform: rotate(180deg) !important;
+
                 div {
                     &:nth-child(1) {}
 
@@ -112,6 +115,7 @@ body {
             text-align: left !important;
             width: max-content !important;
             transition: 300ms !important;
+
             div {
                 transition: 150ms linear;
                 width: $size !important;
@@ -665,5 +669,46 @@ main {
     *,
     p {
         font-family: 'Carattere' !important;
+    }
+}
+
+.photo-div {
+    $sm: 50px;
+    $md: 75px;
+    $lg: 100px;
+    $xl: 200px;
+
+    width: $md;
+    height: $md;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+
+    $sizes: (
+        'sm':$sm,
+        'md':$md,
+        'lg':$lg,
+        'xl':$xl,
+    );
+
+    @each $key,
+    $val in $sizes {
+        &.#{$key} {
+            width: $val !important;
+            height: $val !important;
+        }
+    }
+}
+
+
+.profile-card {
+    .card-header{
+        position: relative !important;
+        height: 100px;
+    }
+    .profile-header {
+        position: absolute;
+        bottom: -35%;
+        
     }
 }

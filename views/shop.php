@@ -1,5 +1,6 @@
 <?php
-include './classes/ProductItem.php';
+session_start();
+include '../classes/ProductItem.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,12 +10,12 @@ include './classes/ProductItem.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abaca Handicraft | Shop</title>
-    <?php include './shared/head.php' ?>
+    <?php include '../shared/head.php' ?>
 </head>
 
 <body class="">
     <?php $active_page = "shop" ?>
-    <?php include './shared/top_header.php' ?>
+    <?php include '../shared/top_header.php' ?>
 
     <?php
     // get active category
@@ -36,17 +37,17 @@ include './classes/ProductItem.php';
                                 <?php
                                 if (strtolower($category) == "baskets") {
                                 ?>
-                                    <img src="./assets/images/front-slider/basket.png" class=" img-fluid h-100" alt="">
+                                    <img src="../assets/images/front-slider/basket.png" class=" img-fluid h-100" alt="">
                                 <?php
                                 }
                                else if (strtolower($category) == "bases") {
                                 ?>
-                                    <img src="./assets/images/front-slider/flower.png" class=" img-fluid h-100" alt="">
+                                    <img src="../assets/images/front-slider/flower.png" class=" img-fluid h-100" alt="">
                                 <?php
                                 }
                                 else if (strtolower($category) == "bags") {
                                 ?>
-                                    <img src="./assets/images/front-slider/bag.png" class=" img-fluid h-100" alt="">
+                                    <img src="../assets/images/front-slider/bag.png" class=" img-fluid h-100" alt="">
                                 <?php
                                 }
                                 ?>
@@ -123,7 +124,7 @@ include './classes/ProductItem.php';
                                     <div class="product-card" id="featured-product-card-<?php echo $key ?>">
                                         <div class="inner">
                                             <div class="image-container">
-                                                <img src="<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
+                                                <img src="../<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
                                             </div>
                                             <div class="w-100 controls ">
                                                 <div class="text-center px-3 py-3 bg-light bg-opacity-75">
@@ -149,10 +150,10 @@ include './classes/ProductItem.php';
         </section>
     </main>
     <br><br>
-    <?php include './shared/footer.php' ?>
-    <?php include './shared/offcanvas-cart.php' ?>
-    <?php include './shared/modals/view-product-modal.php' ?>
-    <?php include './shared/scripts.php' ?>
+    <?php include '../shared/footer.php' ?>
+    <?php include '../shared/offcanvas-cart.php' ?>
+    <?php include '../shared/modals/view-product-modal.php' ?>
+    <?php include '../shared/scripts.php' ?>
 </body>
 
 </html>

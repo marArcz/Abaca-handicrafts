@@ -1,10 +1,10 @@
-<?php include './shared/offcanvas-menu.php' ?>
+<?php include '../shared/offcanvas-menu.php' ?>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="./node_modules/notiflix/dist/notiflix-aio-3.2.6.min.js"></script>
-<script src="./assets/js/user-page-loader.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="../node_modules/notiflix/dist/notiflix-aio-3.2.6.min.js"></script>
+<script src="../assets/js/user-page-loader.js"></script>
+<script src="../assets/js/main.js"></script>
 <script>
     $(function() {
         Notiflix.Loading.init({

@@ -1,7 +1,7 @@
 <div class="modal fade" id="view-product-modal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content rounded-0 border-0 ">
-            <div class="modal-header border-bottom border-dark-brown border-2">
+            <div class="modal-header border-bottom border-orange border-2">
                 <h6 class="modal-title">Product Details</h6>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -25,13 +25,13 @@
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="./assets/images/products/Chandelier1.png" class="d-block w-100" alt="...">
+                                    <img src="../assets/images/products/Chandelier1.png" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="./assets/images/products/Chandelier2.png" class="d-block w-100" alt="...">
+                                    <img src="../assets/images/products/Chandelier2.png" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="./assets/images/products/Chandelier3.png" class="d-block w-100" alt="...">
+                                    <img src="../assets/images/products/Chandelier3.png" class="d-block w-100" alt="...">
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="mt-3">
-                            <button class="col-12 mb-5 btn btn-orange rounded-0 text-light fw-light" type="button">Add to Cart</button>
+                            <button class="col-12 mb-5 btn btn-dark-brown rounded-0 text-light fw-light" type="button">Add to Cart</button>
                             <a href="view-product.php" class="link-dark fw-lighter">View more details</a>
                         </div>
                     </div>

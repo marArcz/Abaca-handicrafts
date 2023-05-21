@@ -1,4 +1,4 @@
-<?php include './classes/ProductItem.php' ?>
+<?php include '../classes/ProductItem.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Product</title>
-    <?php include './shared/head.php' ?>
+    <?php include '../shared/head.php' ?>
 </head>
 
 <body class="bg-light">
     <?php $active_page = 'shop' ?>
-    <?php include './shared/top_header.php' ?>
+    <?php include '../shared/top_header.php' ?>
 
     <main>
         <section class=" pt-5">
@@ -29,37 +29,12 @@
                             </ol>
                         </nav>
                         <div class="row align-items-center justify-content-center" data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+                            <!-- product images -->
                             <div class="col-md">
-                                <!-- <img src="./assets/images/products/dress.png" class="img-fluid img-thumbnail bg-light shadow-sm bg-light" alt=""> -->
-                                <div id="view-product-carousel" class="carousel slide " data-bs-ride="carousel">
-                                    <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#view-product-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
-                                            <div class="circle"></div>
-                                        </button>
-                                        <button type="button" data-bs-target="#view-product-carousel" data-bs-slide-to="1" aria-label="Slide 2">
-                                            <div class="circle"></div>
-
-                                        </button>
-                                        <button type="button" data-bs-target="#view-product-carousel" data-bs-slide-to="2" aria-label="Slide 3">
-                                            <div class="circle"></div>
-
-                                        </button>
-                                    </div>
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="./assets/images/products/Chandelier1.png" class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="./assets/images/products/Chandelier2.png" class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="./assets/images/products/Chandelier3.png" class="d-block w-100" alt="...">
-                                        </div>
-                                    </div>
+                                <img src="../assets/images/products/dress.png" class="img-fluid img-thumbnail bg-light shadow-sm bg-light" alt="">
+                                <div class="d-flex overflow-auto mt-2">
+                                    <img src="../assets/images/products/bag2.png" class="img-fluid img-thumbnail" width="100" height="100" alt="">
                                 </div>
-                                <p class="mb-1 mt-3">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                                </p>
                             </div>
                             <div class="col-md-7">
                                 <p class="my-1 fs-1">Abaca Dress</p>
@@ -70,7 +45,9 @@
                                     Color: Pink, Brown
                                 </p>
                                 <p class="mb-1 mt-3 fw-bold fs-5">₱ 2,000</p>
-
+                                <p class="mb-1 mt-3">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                </p>
                                 <div class="mt-3">
                                     <div class="row">
                                         <div class="col-md-8">
@@ -116,7 +93,7 @@
                             <div class="product-card" id="product-card-<?php echo $key ?>">
                                 <div class="inner">
                                     <div class="image-container">
-                                        <img src="<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
+                                        <img src="../<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
                                     </div>
                                     <div class="w-100 controls ">
                                         <div class="d-flex bg-dark px-3 py-1">
@@ -139,10 +116,10 @@
         </section>
     </main>
     <br>
-    <?php include './shared/footer.php' ?>
-    <?php include './shared/offcanvas-cart.php' ?>
-    <?php include './shared/offcanvas-menu.php' ?>
-    <?php include './shared/scripts.php' ?>
+    <?php include '../shared/footer.php' ?>
+    <?php include '../shared/offcanvas-cart.php' ?>
+    <?php include '../shared/offcanvas-menu.php' ?>
+    <?php include '../shared/scripts.php' ?>
 </body>
 
 </html>

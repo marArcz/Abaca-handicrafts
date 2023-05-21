@@ -27,13 +27,13 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="./assets/images/products/Chandelier1.png" class="d-block w-100" alt="...">
+                                        <img src="../assets/images/products/Chandelier1.png" class="d-block w-100" alt="...">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/images/products/Chandelier2.png" class="d-block w-100" alt="...">
+                                        <img src="../assets/images/products/Chandelier2.png" class="d-block w-100" alt="...">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="./assets/images/products/Chandelier3.png" class="d-block w-100" alt="...">
+                                        <img src="../assets/images/products/Chandelier3.png" class="d-block w-100" alt="...">
                                     </div>
                                 </div>
                             </div>

@@ -13,7 +13,7 @@
             </div>
             <div class="col-6 text-center">
                 <a href="index.php" class="navbar-brand text-center mx-auto">
-                    <img src="./assets/images/abaca-logo.png" class="img-fluid mx-auto" alt="">
+                    <img src="../assets/images/abaca-logo.png" class="img-fluid mx-auto" alt="">
                 </a>
             </div>
             <div class="col">

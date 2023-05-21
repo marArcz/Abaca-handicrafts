@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?php $active_page="cart" ?>
     <?php include './shared/top_header.php' ?>
     <main>
         <section class="pt-5">
