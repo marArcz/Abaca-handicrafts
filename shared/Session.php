@@ -1,10 +1,9 @@
 <?php
 
 declare(strict_types=1);
-const USER_SESSION_NAME = "party_jungle_user";
+const USER_SESSION_NAME = "abaca_handicraft_user";
 
 session_start();
-include_once './conn/conn.php';
 class Session
 {
     public static function redirectTo(string $url)
@@ -31,21 +30,21 @@ class Session
         $_SESSION[USER_SESSION_NAME] = $userId;
     }
 
-    public static function getUser()
+    public static function getUser(PDO $pdo)
     {
         if (!isset($_SESSION[USER_SESSION_NAME])) {
             return null;
         }
-        global $con;
         //get user
         $user_id = $_SESSION[USER_SESSION_NAME];
-        $query = mysqli_query($con, "SELECT * FROM users WHERE id = $user_id");
+        $query = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+        $query->execute([$user_id]);
 
-        if ($query->num_rows == 0) {
+        if ($query->rowCount() == 0) {
             //if no user found
             return null;
         } else {
-            $user = $query->fetch_assoc();
+            $user = $query->fetch(PDO::FETCH_ASSOC);
             return $user;
         }
     }
@@ -81,7 +80,7 @@ class Session
     }
 
     public static function destroyUserSession(){
-        if(self::getUser() !== null){
+        if(isset($_SESSION[USER_SESSION_NAME])){
             self::removeSession(USER_SESSION_NAME);
         }
     }

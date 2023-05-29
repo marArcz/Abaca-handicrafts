@@ -14,8 +14,9 @@
             $nav_links = [
                 new NavLink("Home", "home", "index.php", "home"),
                 new NavLink("Shop", "shop", "shop.php", "storefront"),
-                new NavLink("About", "", "about.php", "info"),
+                new NavLink("About", "about", "about.php", "info"),
                 new NavLink("Contact", "", "contact.php", "phone"),
+                new NavLink("Orders", "orders", "orders.php", "schedule"),
             ];
 
             foreach ($nav_links as $key => $nav_link) {
@@ -34,7 +35,7 @@
         </ul>
         <ul class="nav flex-row align-items-center justify-content-center px-0 mx-0 mt-3">
             <?php
-            if (!isset($_SESSION['user_id'])) {
+            if (!isset($user)) {
                 $nav_links = [
                     new NavLink("Log In", "login", "login.php", "login"),
                     new NavLink("Sign up", "signup", "signup.php", "edit"),
@@ -59,11 +60,11 @@
                         <div class="profile-pic mb-3">
                             <div class="photo-div rounded-circle border border-3 border-white shadow" data-image="../assets/images/profile_sample.jpg">
                             </div>
-                            <span class="fs-6 mt-2 text-dark-brown">John Doe</span>
+                            <span class="fs-6 mt-2 text-dark-brown"><?php echo $user['firstname'] . ' ' . $user['lastname'] ?></span>
                     </a>
                 </li>
                 <li class="nav-item mb-2 py-3 text-center">
-                    <a href="logout.php" class="nav-link link-dark d-flex align-items-center flex-column justify-content-center fw-bold w-auto">
+                    <a href="../app/logout.php" class="nav-link link-dark d-flex align-items-center flex-column justify-content-center fw-bold w-auto">
                         <div class="icon">
                             <span class="material-icon text-dark-brown">logout</span>
                         </div>

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php include './shared/head.php' ?>
+    <?php include '../shared/head.php' ?>
 </head>
 
 <body class="bg-light">
-    <?php include './shared/top_header.php' ?>
+    <?php include '../shared/top_header.php' ?>
     <main>
         <section class="pt-xl-4 pt-4 ">
             <div class="text-center bg-dark-brown py-3 text-light">
@@ -22,7 +22,7 @@
                         <div class="col-md-10">
                             <div class="row align-items-center gy-3">
                                 <div class="col-md-5">
-                                    <img src="./assets/images/pic.jpg" class="img-fluid" alt="">
+                                    <img src="../assets/images/pic.jpg" class="img-fluid" alt="">
                                 </div>
                                 <div class="col-md">
                                     <p class="fs-4 fw-bold">Abaca Handicrafts</p>
@@ -36,8 +36,8 @@
         </section>
     </main>
     <br>
-    <?php include './shared/footer.php' ?>
-    <?php include './shared/scripts.php' ?>
+    <?php include '../shared/footer.php' ?>
+    <?php include '../shared/scripts.php' ?>
 </body>
 
 </html>

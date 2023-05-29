@@ -478,4 +478,65 @@ main section {
 .profile-card .profile-header {
   position: absolute;
   bottom: -35%;
+}
+
+.search-input {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  position: relative;
+}
+.search-input input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgb(61, 61, 61) !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  color: rgb(46, 46, 46) !important;
+}
+.search-input input::-moz-placeholder {
+  color: rgb(119, 119, 119);
+}
+.search-input input::placeholder {
+  color: rgb(119, 119, 119);
+}
+.search-input input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #F2994A !important;
+}
+.search-input button {
+  padding: 0 !important;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: none;
+  background: transparent;
+}
+
+.product-image-row {
+  display: flex;
+  width: 300px !important;
+  max-width: 100% !important;
+  justify-content: center;
+  overflow-x: scroll;
+  box-sizing: border-box;
+}
+
+.product-images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100% !important;
+  justify-content: center;
+  row-gap: 6px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.product-images .product-image-wrapper {
+  border-radius: 5px;
+  background: rgb(226, 226, 226);
+  border: 2px solid white;
+}
+.product-images .product-image-wrapper img {
+  width: 60px !important;
 }/*# sourceMappingURL=style.css.map */

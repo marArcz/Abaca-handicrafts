@@ -6,23 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <?php include './shared/head.php' ?>
+    <?php include '../shared/head.php' ?>
 </head>
 
 <body>
     <?php $active_page = "profile" ?>
-    <?php include './shared/top_header.php' ?>
+    <?php include '../shared/top_header.php' ?>
     <main>
         <section class="pt-3">
             <div class="container">
-                <div class="row gx-2">
+                <a href="shop.php" class=" d-flex align-items-center text-decoration-none link-brown">
+                    <i class=" bx bx-chevron-left bx-md"></i>
+                    Continue Shopping
+                </a>
+                <div class="row gx-2 mt-3">
                     <div class="col-md">
                         <div class="card rounded-1 profile-card shadow border-0">
                             <div class="card-header bg-dark-brown py-3">
                                 <div class="container">
                                     <div class="profile-header d-flex align-items-center">
                                         <div class="profile-pic">
-                                            <div class="lg photo-div rounded-circle border border-3 border-white shadow" data-image="./assets/images/profile_sample.jpg">
+                                            <div class="lg photo-div rounded-circle border border-3 border-white shadow" data-image="../assets/images/profile_sample.jpg">
                                             </div>
                                         </div>
                                         <div class="ms-3">
@@ -79,8 +83,8 @@
         </section>
     </main>
     <br>
-    <?php include './shared/footer.php' ?>
-    <?php include './shared/scripts.php' ?>
+    <?php include '../shared/footer.php' ?>
+    <?php include '../shared/scripts.php' ?>
 </body>
 
 </html>

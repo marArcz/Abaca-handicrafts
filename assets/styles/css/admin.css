@@ -1,1 +1,97 @@
-/*# sourceMappingURL=admin.css.map */
+.auth-box {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth-box .inner {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.auth-box .inner .row {
+  width: 100%;
+  box-sizing: border-box !important;
+}
+
+.image-container {
+  position: relative;
+  width: 100% !important;
+  height: 300px !important;
+  margin-bottom: 10px;
+  overflow: hidden !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-container img {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.image-container.sm {
+  max-height: 150px !important;
+}
+.image-container.md {
+  max-height: 250px !important;
+}
+.image-container.lg {
+  max-height: 400px !important;
+}
+.image-container::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 300ms;
+  cursor: pointer;
+}
+.image-container:hover::after {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.product-image {
+  position: relative;
+}
+.product-image .controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: none;
+}
+.product-image .controls .inner {
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.product-image .controls .inner button, .product-image .controls .inner a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+}
+.product-image:hover .controls {
+  display: block;
+}
+
+ul.nav-elegant {
+  background: white !important;
+  border: 1px solid rgb(233, 233, 233);
+  display: flex !important;
+  overflow-x: auto;
+}
+ul.nav-elegant li {
+  width: -moz-max-content !important;
+  width: max-content !important;
+  padding: 10px 15px !important;
+}
+ul.nav-elegant li.active {
+  border-bottom: 2px solid #F2994A !important;
+}/*# sourceMappingURL=admin.css.map */

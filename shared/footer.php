@@ -74,3 +74,5 @@
         </div>
     </div>
 </footer>
+
+<?php include_once '../shared/modals/search-modal.php' ?>

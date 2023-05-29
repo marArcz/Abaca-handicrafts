@@ -19,7 +19,7 @@
             <div class="col">
                 <ul class="nav justify-content-end text-end align-items-end flex-row ">
                     <li class="nav-item d-lg-flex d-none">
-                        <a href="#" class="nav-link link-dark">
+                        <a href="#search-modal" data-bs-toggle="modal" class="nav-link link-dark">
                             <i class="bx bx-search bx-sm"></i>
                         </a>
                     </li>

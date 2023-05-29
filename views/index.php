@@ -1,5 +1,6 @@
 <?php
-session_start();
+$redirect_to_login = false;
+require_once '../shared/user_session.php';
 include_once '../classes/CarouselItem.php';
 include_once '../classes/ProductItem.php';
 ?>
@@ -69,7 +70,7 @@ include_once '../classes/ProductItem.php';
                                                 <div class="line mt-3 mb-4"></div>
                                                 <p class="text-light fs-5"><?php echo $carouselItem->description ?></p>
 
-                                                <a href="<?php echo $carouselItem->url ?>" class="btn btn-orange rounded-0 text-light mt-3 hover-btn-elegant btn-elegant">Browse</a>
+                                                <!-- <a href="<?php echo $carouselItem->url ?>" class="btn btn-orange rounded-0 text-light mt-3 hover-btn-elegant btn-elegant">Browse</a> -->
                                             </div>
                                         </div>
                                         <div class="col-md text-end h-100">
@@ -106,35 +107,26 @@ include_once '../classes/ProductItem.php';
                 <div class="products-container">
                     <div class="row gy-3 gx-lg-5 gx-3 justify-content-center justify-content-lg-start">
                         <?php
+                        $query = $pdo->prepare('SELECT * FROM products WHERE is_featured = 1');
+                        $query->execute();
 
-                        $featured_products = [
-                            new ProductItem("Abaca Bag", "₱120", "assets/images/products/bag3.png"),
-                            new ProductItem("Abaca Dress", "₱120", "assets/images/products/dress.png"),
-                            new ProductItem("Abaca Souvenir Rabbit", "₱120", "assets/images/products/rabbit.png"),
-                            new ProductItem("Abaca Pen Holder", "₱120", "assets/images/products/garapon brown close.png"),
-                            new ProductItem("Abaca Chandelier", "₱120", "assets/images/products/Chandelier1.png"),
-                            new ProductItem("Abaca Chandelier", "₱120", "assets/images/products/Chandelier2.png"),
-                            new ProductItem("Abaca Totbag", "₱120", "assets/images/products/totbag group.png"),
-                            new ProductItem("Carabao Souvenir ", "₱120", "assets/images/products/carabao.png"),
-                        ];
-
-                        foreach ($featured_products as $key => $product) {
+                        while ($row = $query->fetch()) {
                         ?>
                             <div class="col-md-3 " data-aos-once="true" data-aos-duration="800" data-aos="<?php echo ($key + 1) % 4 == 0 ? 'flip-left' : 'flip-right' ?>">
-                                <div class="product-card" id="featured-product-card-<?php echo $key ?>">
+                                <div class="product-card" id="featured-product-card-<?= $row['id'] ?>">
                                     <div class="inner">
                                         <div class="image-container">
-                                            <img src="../<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
+                                            <img src="<?= $row['image'] ?>" alt="<?= $row['product_name'] ?>" class="product-image">
                                         </div>
                                         <div class="w-100 controls ">
-                                            <div class="text-center px-3 py-1 bg-light bg-opacity-75">
-                                                <a href="#view-product-modal" data-bs-toggle="modal" class="link-dark">Quick View</a>
+                                            <div class="text-center px-3 py-3 bg-light bg-opacity-75">
+                                                <a href="view-product.php?id=<?= $row['id'] ?>" class="link-dark">View Product</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="text-center text mt-3">
-                                        <p class="my-1 product-name"><?php echo $product->name ?></p>
-                                        <p class="my-1 text-secondary product-price"><?php echo $product->price ?></p>
+                                        <p class="my-1 product-name"><?php echo $row['product_name'] ?></p>
+                                        <p class="my-1 text-secondary product-price">₱<?= $row['price'] ?>.00</p>
                                     </div>
                                 </div>
                             </div>
@@ -148,82 +140,9 @@ include_once '../classes/ProductItem.php';
         <br><br><br>
         <section class="mt-3">
             <div class="container">
-                <div class="row gy-5">
-                    <div class="col-md-3">
-                        <ul class="nav flex-column " data-aos-once="true" data-aos-duration="300" data-aos="zoom-in">
-                            <?php
-                            $categories = [
-                                "All Products",
-                                "Baskets",
-                                "Bases",
-                                "Souvenirs",
-                                "Chandeliers",
-                                "Wallets",
-                                "Footwear",
-                                "Hats",
-                                "Bags",
-                            ];
+                <div class="row">
+                    <div class="col-md-5">
 
-                            foreach ($categories as $key => $category) {
-                            ?>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link link-<?php echo $key == 0 ? 'orange' : 'dark' ?>"><?php echo $category ?></a>
-                                </li>
-                            <?php
-                            }
-                            ?>
-
-
-                        </ul>
-                    </div>
-                    <div class="col-md">
-                        <div class="d-flex flex-wrap">
-                            <p class="my-1">All Products</p>
-                            <p class="ms-auto my-1">Newest</p>
-                        </div>
-                        <div class="products-container mt-3">
-                            <div class="row gy-3 gx-lg-5 gx-3 justify-content-center justify-content-lg-start">
-                                <?php
-
-                                $products = [
-                                    new ProductItem("Flower Base", "₱120", "assets/images/products/flower base.png"),
-                                    new ProductItem("Abaca Souvenir Dog", "₱120", "assets/images/products/dog.png"),
-                                    new ProductItem("Fruit Basket", "₱120", "assets/images/products/fruit basket.png"),
-                                    new ProductItem("Fruit Bowl", "₱120", "assets/images/products/fruit bowl single.png"),
-                                    new ProductItem("Abaca Souvenir pig", "₱120", "assets/images/products/pig.png"),
-                                    new ProductItem("Elephant mini basket", "₱120", "assets/images/products/elepant lalagyan.png"),
-                                    new ProductItem("Abaca Totbag", "₱120", "assets/images/products/totbag green.png"),
-                                    new ProductItem("Abaca Souvenir Monkey", "₱120", "assets/images/products/monkey.png"),
-                                ];
-
-                                foreach ($products as $key => $product) {
-                                ?>
-                                    <div class="col-md-4 col-lg-3" data-aos-once="true" data-aos-duration="500" data-aos="zoom-in">
-                                        <div class="product-card" id="product-card-<?php echo $key ?>">
-                                            <div class="inner">
-                                                <div class="image-container">
-                                                    <img src="../<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
-                                                </div>
-                                                <div class="w-100 controls ">
-                                                    <div class="text-center px-3 py-1 bg-light bg-opacity-75">
-                                                        <a href="#view-product-modal" data-bs-toggle="modal" class="link-dark">Quick View</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="text-center text mt-3">
-                                                <p class="my-1 product-name"><?php echo $product->name ?></p>
-                                                <p class="my-1 text-secondary product-price"><?php echo $product->price ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                            <div class="mt-3">
-                                <a class="btn btn-light" href="shop.php">More</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
