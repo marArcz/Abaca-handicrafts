@@ -15,15 +15,13 @@ jobs:
         username: epiz_33706101
         password: ${{ secrets.ftp_password }}
         server-dir: abaca-handicraft.rf.gd/htdocs/
-  install-packages:
-    name: install packages
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
+    - name: NPM get latest
+      uses: actions/checkout@v3
+    - name: install packages
+      uses: actions/setup-node@v3
+      with:
           node-version: 16
           cache: 'npm'
-      - run: npm ci
-      - run: npm test
+    - run: npm ci
+
   
