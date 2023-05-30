@@ -11,7 +11,7 @@
     if (isset($_SESSION['success'])) {
     ?>
         Notiflix.Report.success(
-            'Notiflix Success',
+            'Success',
             "<?= $_SESSION['success'] ?>",
             'Okay',
         );
