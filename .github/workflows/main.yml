@@ -16,8 +16,9 @@ jobs:
         password: ${{ secrets.ftp_password }}
         server-dir: abaca-handicraft.rf.gd/htdocs/
     - name: run npm
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+      uses: actions/checkout@v3
+    - name: install packages
+      uses: actions/setup-node@v3
       with:
         node-version: 18
     - run: npm ci
