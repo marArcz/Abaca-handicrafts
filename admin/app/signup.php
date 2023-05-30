@@ -7,7 +7,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
-
+        $photo = "../../assets/images/default.jpg";
         $query = $pdo->prepare('SELECT * FROM admin WHERE username = ?');
         $query->execute([$username]);
         if($query->rowCount() > 0){

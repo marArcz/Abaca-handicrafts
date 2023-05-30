@@ -127,7 +127,7 @@
                     console.log('res: ', res)
                     $("#id").val(id);
                     $('#category').val(res.category_name);
-                    $("#edit-preview").attr('src',res.image).data('default',res.image);
+                    $("#edit-preview").attr('src','../'+res.image).data('default','../'+res.image);
                 }
             })
         })

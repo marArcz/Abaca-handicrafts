@@ -90,7 +90,14 @@
                                 <?php
                                 }
                                 ?>
-
+                                <?php if (!$orders) : ?>
+                                    <div class="text-center">
+                                        <p class="text-center">You have not placed any orders yet.</p>
+                                        <a href="shop.php" class="mt-3 text-orange nav-link text-uppercase">
+                                            <small>Start shopping now</small>
+                                        </a>
+                                    </div>
+                                <?php endif ?>
                             </div>
                         </div>
                     </div>

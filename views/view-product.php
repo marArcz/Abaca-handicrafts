@@ -99,39 +99,7 @@ require '../shared/user_session.php'
             </div>
         </section>
         <br>
-        <section class="">
-            <div class="container py-3">
-                <p class="fs-5 text-center mb-3">Related Products</p>
-                <div class="row gy-3 gx-lg-5 gx-3 justify-content-center justify-content-lg-start">
-                    <!-- <?php
-
-                            foreach ($products as $key => $product) {
-                            ?>
-                        <div class="col-md-3 " data-aos-once="true" data-aos-duration="500" data-aos="zoom-in">
-                            <div class="product-card" id="product-card-<?php echo $key ?>">
-                                <div class="inner">
-                                    <div class="image-container">
-                                        <img src="../<?php echo $product->image ?>" alt="<?php echo $product->name ?>" class="product-image">
-                                    </div>
-                                    <div class="w-100 controls ">
-                                        <div class="d-flex bg-dark px-3 py-1">
-                                            <a href="#offcanvas-cart" data-target="#product-card-<?php echo $key ?>" data-bs-toggle="offcanvas" class="my-1 link-light text-decoration-none d-flex align-items-center"><span class="material-symbols-outlined fs-6 me-1">shopping_cart</span> Add to cart</a>
-                                            <a href="#view-product-modal" data-bs-toggle="modal" class="my-1 link-light text-decoration-none ms-auto"><span class="material-symbols-outlined fs-6 me-1">fullscreen</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center text mt-3">
-                                    <p class="my-1 product-name"><?php echo $product->name ?></p>
-                                    <p class="my-1 text-secondary product-price"><?php echo $product->price ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                            }
-                    ?> -->
-                </div>
-            </div>
-        </section>
+    
     </main>
     <br>
     <?php include '../shared/footer.php' ?>

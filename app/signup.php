@@ -10,7 +10,7 @@ if(isset($_POST['signup'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
-    
+    $photo = '../assets/images/default.jpg';
     // check if passwords doesn't match
     if($password !== $confirm_password){
         $password_error = "Passwords does not match!";
@@ -29,8 +29,8 @@ if(isset($_POST['signup'])){
     }else{
         // if no user found with the same email
         // save user 
-        $query = $pdo->prepare('INSERT INTO users(firstname,lastname,address,email,password) VALUES(?,?,?,?,?)');
-        $added = $query->execute([$firstname,$lastname,$address,$email,$hashed_password]);
+        $query = $pdo->prepare('INSERT INTO users(firstname,lastname,address,email,password,photo) VALUES(?,?,?,?,?,?)');
+        $added = $query->execute([$firstname,$lastname,$address,$email,$hashed_password,$photo]);
 
         // if successfully added
         if($added){ 

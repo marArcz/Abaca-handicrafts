@@ -37,7 +37,7 @@
                                     $cart_items = $query->fetchAll();
 
                                     foreach ($cart_items as $key => $cart_item) {
-                                    $item_count += $cart_item['quantity'];
+                                        $item_count += $cart_item['quantity'];
                                     ?>
                                         <li class=" list-group-item mb-3" id="cart-row-item-<?= $cart_item['id'] ?>">
                                             <!-- cart item -->
@@ -49,7 +49,7 @@
                                                 <div class="col-6">
                                                     <div class="row align-items-center">
                                                         <div class="col-md-5">
-                                                            <p class="mb-1 fs-6 fw-bold col-12 text-truncate"><?= $cart_item['product_name'] ?></p>
+                                                            <a href="view-product.php?id=<?= $cart_item['id'] ?>" class=" link-dark-brown mb-1 fs-6 fw-bold col-12 text-truncate"><?= $cart_item['product_name'] ?></a>
                                                             <div class=" text-bg-orange badge"><small><?= $cart_item['category_name'] ?></small></div>
                                                             <p class="mt-3 fw-bold fs-6 text-price">₱<?= $cart_item['price'] ?>.00</p>
                                                         </div>
@@ -96,8 +96,12 @@
                                     <?php
                                     }
                                     ?>
-
                                 </ul>
+                                <?php if (count($cart_items) == 0) : ?>
+                                    <div class="text-center mt-3 text-black-50 mb-5">
+                                        <h5>You have no items in your cart.</h5>
+                                    </div>
+                                <?php endif ?>
                                 <div class="text-center">
                                     <a href="shop.php" class=" link-orange text-decoration-none">Continue Shopping <i class="bx bx-right-arrow-alt"></i></a>
                                 </div>
@@ -107,9 +111,9 @@
                     <div class="col-md-3">
                         <div class="card border-0 shadow h-100 border-top border-dark-brown border-3">
                             <div class="card-body p-4">
-                                <?php 
-                                    $query = $pdo->prepare('SELECT SUM(quantity) FROM cart WHERE user_id = ?');
-                                    $query->execute([$user['id']]);
+                                <?php
+                                $query = $pdo->prepare('SELECT SUM(quantity) FROM cart WHERE user_id = ?');
+                                $query->execute([$user['id']]);
 
                                 ?>
                                 <p class="fs-5">Order Summary</p>
@@ -129,7 +133,7 @@
                                     <hr>
                                     <div class="d-flex mb-3">
                                         <p class="my-1 fw-bold">Total Price</p>
-                                        <p  class="my-1 ms-auto fw-bold">₱<span id="text-total-price"><?= $total_price ?></span>.00</p>
+                                        <p class="my-1 ms-auto fw-bold">₱<span id="text-total-price"><?= $total_price ?></span>.00</p>
                                     </div>
                                     <button class=" btn btn-orange col-12" type="submit">Checkout</button>
                                 </form>
@@ -161,33 +165,36 @@
                 let input = $(this).siblings("input");
                 let cartId = input.data('id');
                 let quantity = input.val();
-                updateCartQuantity(cartId,quantity)
+                updateCartQuantity(cartId, quantity)
                 let subtotal = $(input.data('row')).find(".text-subtotal").html();
-                
+
             })
-            
+
         })
 
-        function updateCartQuantity(cart_id,quantity) { 
+        function updateCartQuantity(cart_id, quantity) {
             Notiflix.Loading.pulse();
-               $.ajax({
-                    url:'../app/update-cart-quantity.php',
-                    method:'post',
-                    dataType:'json',
-                    data:{cart_id,quantity},
-                    success:function(res){
-                        Notiflix.Loading.remove();
-                        console.log(res)
-                        $("#text-total-price").html(res.total)
-                        $("#text-item-count").html(res.cart.item_count)
-                        $(`#cart-row-item-${res.cart.id}`).find(".text-subtotal").html('₱'+Number(res.cart.quantity) * Number(res.cart.price) + '.00')
-                    },
-                    error:function(err){
-                        Notiflix.Loading.remove();
-                        console.log('err: ', err);
-                    }
-                })
-         }
+            $.ajax({
+                url: '../app/update-cart-quantity.php',
+                method: 'post',
+                dataType: 'json',
+                data: {
+                    cart_id,
+                    quantity
+                },
+                success: function(res) {
+                    Notiflix.Loading.remove();
+                    console.log(res)
+                    $("#text-total-price").html(res.total)
+                    $("#text-item-count").html(res.cart.item_count)
+                    $(`#cart-row-item-${res.cart.id}`).find(".text-subtotal").html('₱' + Number(res.cart.quantity) * Number(res.cart.price) + '.00')
+                },
+                error: function(err) {
+                    Notiflix.Loading.remove();
+                    console.log('err: ', err);
+                }
+            })
+        }
     </script>
 </body>
 

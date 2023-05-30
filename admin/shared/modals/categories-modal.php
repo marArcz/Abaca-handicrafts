@@ -49,11 +49,11 @@
                 <div class="modal-body px-3">
                     <div class="form-group">
                         <label for="" class=" text-dark">Category name:</label>
-                        <input type="text" class="form-control" placeholder="Enter new category..." name="category" id="category" required>
+                        <input type="text" class="form-control" placeholder="Enter new category..." name="category" id="category" >
                     </div>
                     <div class="form-group">
                         <label for="" class=" text-dark">Choose image:</label>
-                        <input type="file" accept="image/*" data-preview="#edit-preview" class=" photo-chooser form-control" name="image" required>
+                        <input type="file" accept="image/*" data-preview="#edit-preview" class=" photo-chooser form-control" name="image" >
                     </div>
                     <div class="mb-3">
                         <img src="" id="edit-preview" style="max-height:170px" class=" img-fluid" alt="">

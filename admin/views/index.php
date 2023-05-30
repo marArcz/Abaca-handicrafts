@@ -5,7 +5,7 @@ $query = $pdo->query('SELECT COUNT(*) FROM admin');
 if($query->fetch()[0] == 0){
     header('location: signup.php');
 }else{
-    if(isset($_SESSION['admin'])){
+    if(isset($_SESSION['admin_id'])){
         header('location: dashboard.php');
         exit();
     }

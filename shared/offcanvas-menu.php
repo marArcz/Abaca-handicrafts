@@ -58,7 +58,7 @@
                 <li class="nav-item mb-2 py-3 text-center <?php echo $active_page == 'profile' ? 'active' : '' ?>">
                     <a href="profile.php" class="nav-link link-dark d-flex align-items-center flex-column justify-content-center fw-bold w-auto">
                         <div class="profile-pic mb-3">
-                            <div class="photo-div rounded-circle border border-3 border-white shadow" data-image="../assets/images/profile_sample.jpg">
+                            <div class="photo-div rounded-circle border border-3 border-white shadow" data-image="<?= $user['photo'] ?>">
                             </div>
                             <span class="fs-6 mt-2 text-dark-brown"><?php echo $user['firstname'] . ' ' . $user['lastname'] ?></span>
                     </a>

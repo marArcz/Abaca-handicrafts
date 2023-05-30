@@ -1,3 +1,4 @@
+<?php require '../shared/user_session.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +27,11 @@
                                 <div class="container">
                                     <div class="profile-header d-flex align-items-center">
                                         <div class="profile-pic">
-                                            <div class="lg photo-div rounded-circle border border-3 border-white shadow" data-image="../assets/images/profile_sample.jpg">
+                                            <div class="lg photo-div rounded-circle border border-3 border-white shadow-sm" data-image="<?= $user['photo'] ?>">
                                             </div>
                                         </div>
                                         <div class="ms-3">
-                                            <p class="fs-3 text-light">John Doe</p>
+                                            <p class="fs-3 text-light"><?= $user['firstname'] . ' ' . $user['lastname'] ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -39,24 +40,14 @@
                                 <div class="container">
                                     <div class="row mt-3">
                                         <div class="col-md">
-                                            <h5 class="">Personal Information</h5>
+                                            <h5 class="">Your Information</h5>
                                             <div>
-                                                <?php
-                                                $personal_info = [
-                                                    "Gender" => "Male",
-                                                    "Email Address" => "johndoe@gmail.com",
-                                                    "Address" => "Gogon Centro Virac, Catanduanes",
-                                                ];
-
-                                                foreach ($personal_info as $key => $value) {
-                                                ?>
-                                                    <p class="fs-6 text-secondary my-1">
-                                                        <small><?php echo $key ?>: <span><?php echo $value ?></span></small>
-                                                    </p>
-                                                <?php
-                                                }
-                                                ?>
-
+                                                <p class="fs-6 text-secondary my-1">
+                                                    <small>Email address: <span><?= $user['email'] ?></span></small>
+                                                </p>
+                                                <p class="fs-6 text-secondary my-1">
+                                                    <small>Address: <span><?= $user['address'] ?></span></small>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-md">
