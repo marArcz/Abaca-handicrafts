@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label for="" class=" text-dark">Choose image:</label>
-                        <input type="file" accept="image/*" data-preview="#edit-preview" class=" photo-chooser form-control" name="image" >
+                        <input type="file" accept="image/*" data-preview="#edit-preview" class="photo-chooser form-control" name="image" >
                     </div>
                     <div class="mb-3">
                         <img src="" id="edit-preview" style="max-height:170px" class=" img-fluid" alt="">
