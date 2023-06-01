@@ -114,7 +114,7 @@
                                         ?>
                                         <p class="mb-1">Revenue</p>
                                         <h3 class="text-danger">
-                                            <?= $revenue ?>
+                                            <?= $revenue?$revenue : 0 ?>
                                         </h3>
                                     </div>
                                 </div>

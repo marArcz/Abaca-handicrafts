@@ -20,8 +20,8 @@
         if(!isset($error)){
             $hashed_password = password_hash($password,PASSWORD_DEFAULT);
             // create account
-            $query = $pdo->prepare('INSERT INTO admin(firstname,lastname,username,password) VALUES(?,?,?,?)');
-            $added = $query->execute([$firstname,$lastname,$username,$hashed_password]);
+            $query = $pdo->prepare('INSERT INTO admin(firstname,lastname,username,password,photo) VALUES(?,?,?,?,?)');
+            $added = $query->execute([$firstname,$lastname,$username,$hashed_password,$photo]);
             
             if($added){
                 $_SESSION['success'] = 'You successfully created an account!';

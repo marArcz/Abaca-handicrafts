@@ -35,7 +35,7 @@
                     <span class="nav-text">Orders</span>
                 </a>
             </li>
-            <li><a class="ai-icon py-3" href="logout.php" aria-expanded="false">
+            <li><a class="ai-icon py-3" href="../app/logout.php" aria-expanded="false">
                     <i class="bx bx-log-out"></i>
                     <span class="nav-text">Log out</span>
                 </a>

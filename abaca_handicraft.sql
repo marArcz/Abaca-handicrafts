@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2023 at 03:30 AM
+-- Generation Time: Jun 01, 2023 at 03:07 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `photo`) VALUES
-(3, 'marlozafe', '$2y$10$tJx.bfXcMv/rMHrLQ1ikcOQlg2jtW/W85CMxdkCd.k25QDdhUSDXC', 'Marlo', 'Zafe', '../../assets/images/default.jpg');
+(5, 'admin', '$2y$10$gGPM2cz0vjvsPrKkIVYDAOAE5fx7qtwb9rJNh9N29MMDo1hhPuUMG', 'Administrator', 'Admin', '../../assets/images/default.jpg');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,8 @@ INSERT INTO `cart` (`id`, `product_id`, `user_id`, `quantity`) VALUES
 (15, 7, 2, 1),
 (16, 13, 2, 1),
 (17, 12, 2, 1),
-(18, 21, 2, 1);
+(18, 21, 2, 1),
+(22, 6, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,7 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `order_no`, `user_id`, `total`, `status`, `shipping_address`, `payment_method`, `ordered_at`, `updated_at`) VALUES
 (9, 'ABACAMAY230000000009', 2, 2040, 'Processing', 'Gogon Centro, Catanduanes, Bicol Region, 4800, Philippines', 'Cash', '2023-05-29 07:43:07', '2023-05-30 01:23:11'),
-(12, 'ABACAMAY2300012', 3, 380, 'Pending', 'Philippines', 'Cash', '2023-05-30 01:26:54', '2023-05-30 01:26:54');
+(13, 'ABACAMAY2300013', 3, 640, 'Processing', 'Philippines', 'Cash', '2023-05-30 23:30:42', '2023-06-01 01:00:06');
 
 -- --------------------------------------------------------
 
@@ -144,8 +145,7 @@ CREATE TABLE `order_details` (
 
 INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `product_name`, `product_price`, `product_image`, `quantity`) VALUES
 (10, 9, 6, 'Fruit Basket', 180, '../assets/images/products/fruit basket.png', 3),
-(16, 12, 13, 'Fruit bowl', 260, '../assets/images/products/fruit bowl.png', 1),
-(17, 12, 9, 'Pink Abaca Bag', 120, '../assets/images/products/bag2.png', 1);
+(18, 13, 12, 'Abaca Bag', 320, '../assets/images/products/bag3.png', 2);
 
 -- --------------------------------------------------------
 
@@ -235,8 +235,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `address`, `email`, `password`, `photo`) VALUES
-(1, 'Marlo', 'Zafe', 'Philippines', 'johndoe@gmail.com', '$2y$10$.N.exQa360CjXPTGadQrDOVNKowuytu/ZCF7g4OqUlvrkUN6O5tCC', ''),
-(2, 'Marlo', 'Zafe', 'Gogon Centro, Catanduanes, Bicol Region, 4800, Philippines', 'marlozafe13@gmail.com', '$2y$10$onVcN6C7ZHt93BfTSOx.VuITWv7J1K/xy9q4hIHuxBLJYMdfaOjTW', ''),
+(1, 'Marlo', 'Zafe', 'Philippines', 'johndoe@gmail.com', '$2y$10$.N.exQa360CjXPTGadQrDOVNKowuytu/ZCF7g4OqUlvrkUN6O5tCC', '../assets/images/default.jpg'),
+(2, 'Marlo', 'Zafe', 'Gogon Centro, Catanduanes, Bicol Region, 4800, Philippines', 'marlozafe13@gmail.com', '$2y$10$onVcN6C7ZHt93BfTSOx.VuITWv7J1K/xy9q4hIHuxBLJYMdfaOjTW', '../assets/images/default.jpg'),
 (3, 'John', 'Doe', 'Philippines', 'mar19arcz@gmail.com', '$2y$10$LlhDqcCcU1skqK0Z5aaqS.ai/YYHTqIzaxJQVaIxao0v9ErgDwjMe', '../assets/images/default.jpg');
 
 --
@@ -304,13 +304,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -322,13 +322,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `products`
