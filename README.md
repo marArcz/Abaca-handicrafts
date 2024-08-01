@@ -1,5 +1,5 @@
-![abaca-logo - Copy](https://github.com/user-attachments/assets/5e861d02-4e63-4088-a179-2be5f7c51fe6)
-### Ecommerce website featuring abaca products
+![abaca-logo - Copy](https://github.com/user-attachments/assets/ecb8f80e-fd64-4323-8b86-824911c13952)
+#### Ecommerce website featuring abaca products
 
 ### This project includes:
 - User Login and Signup
