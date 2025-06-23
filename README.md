@@ -1,5 +1,5 @@
 ![abaca-logo - Copy](https://github.com/user-attachments/assets/ecb8f80e-fd64-4323-8b86-824911c13952)
-#### Ecommerce website featuring abaca products
+#### Ecommerce website featuring abaca products from CATANDUANES
 
 ### This project includes:
 - User Login and Signup
